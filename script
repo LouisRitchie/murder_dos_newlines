@@ -1,7 +1,12 @@
 currentdir="$(pwd)"
 
+shopt -s globstar
 for f in $currentdir/* $currentdir/**/* ; do
-  tr -d '\15\32' < "$f" > "$f"1;
-  mv "$f"1 "$f";
-done;
+  if [[ -d "$f" ]]; then
+	continue
+  else
+	tr -d '\15\32' < "$f" > "$f"1
+	mv "$f"1 "$f"
+  fi
+done
   
