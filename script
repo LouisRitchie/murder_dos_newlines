@@ -1,0 +1,7 @@
+currentdir="$(pwd)"
+
+for f in $currentdir/* $currentdir/**/* ; do
+  tr -d '\15\32' < "$f" > "$f"1;
+  mv "$f"1 "$f";
+done;
+  
