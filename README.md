@@ -10,7 +10,7 @@
 
 ## Introducing Murder Dos Newlines
 
-Murder Dos Newlines murders dos newlines. 
+Murder Dos Newlines murders dos newlines, recursively of course.
 
 To murder dos newlines, run this script in the root of your project directory.
 

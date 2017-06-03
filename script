@@ -1,6 +1,15 @@
+# recurse current directory and subdirectories, replacing dos-style line endings
+# with unix-style line endings
+# Using git? Git will use the original line endings before this script ran, but in
+# your working directory the changes will remain. That means you get to have unix
+# file endings, and once you `git add` and `git reset` git will ignore the changes.
+
 currentdir="$(pwd)"
 
+# enable `**` to recurse down directories; without this line, sh turns `**` into `*`
 shopt -s globstar
+
+# get files in current directory and from all subdirectories
 for f in $currentdir/* $currentdir/**/* ; do
   if [[ -d "$f" ]]; then
 	continue
